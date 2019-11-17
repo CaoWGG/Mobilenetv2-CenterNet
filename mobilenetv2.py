@@ -166,7 +166,7 @@ class IDAUp(nn.Module):
         self.up = nn.Sequential(
                     nn.ConvTranspose2d(
                         out_dim, out_dim, kernel_size=2, stride=2, padding=0,
-                        output_padding=0, groups=1, bias=False),
+                        output_padding=0, groups=out_dim, bias=False),
                     nn.BatchNorm2d(out_dim,eps=0.001,momentum=0.1),
                     nn.ReLU())
         self.conv =  nn.Sequential(
